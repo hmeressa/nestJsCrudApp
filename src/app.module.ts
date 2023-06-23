@@ -22,17 +22,19 @@ import * as path from "path";
     },
   ],
 })
-export class AppModule implements NestModule{
-  configure(consumer: MiddlewareConsumer): any {
-    consumer
+export class AppModule {}
 
-        .apply(AuthMiddleware)
-        .exclude(
-            { path : "auth", method : RequestMethod.POST},
-                   { path : "", method : RequestMethod.POST})
-        .forRoutes("*")
-  }
-  }
+
+  // export class AppModule implements NestModule{
+  // configure(consumer: MiddlewareConsumer): any {
+  //   consumer
+
+  //       .apply(AuthMiddleware)
+  //       .exclude(
+  //           { path : "auth", method : RequestMethod.POST},
+  //                  { path : "", method : RequestMethod.POST})
+  //       .forRoutes("*")
+  // }
 
 
 
