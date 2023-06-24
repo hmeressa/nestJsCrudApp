@@ -18,7 +18,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Login to Docker Hub
+      - name: Login to Docker Hubs
         run: docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
 
       - name: Build Docker image
