@@ -3,7 +3,7 @@ name: CI/CD
 on:
   push:
     branches:
-      - main
+      - master
 
 env:
   DOCKER_HUB_USERNAME: 'hmeressa'
