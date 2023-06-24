@@ -1,0 +1,29 @@
+name: CI/CD
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  DOCKER_HUB_USERNAME: 'hmeressa'
+  DOCKER_HUB_PASSWORD: 'hiluf@2meressa'
+  IMAGE_NAME: hmeressa/myimage:1
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        run: docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
+
+      - name: Build Docker image
+        run: docker build -t $IMAGE_NAME .
+
+      - name: Push Docker image
+        run: docker push $IMAGE_NAME
+
