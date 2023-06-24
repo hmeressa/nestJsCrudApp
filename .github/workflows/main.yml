@@ -21,7 +21,7 @@ jobs:
       - name: Login to Docker Hubs
         run: docker login --username $DOCKER_HUB_USERNAME --password $DOCKER_HUB_PASSWORD
 
-      - name: Build Docker image
+      - name: Build Docker images
         run: docker build -t $IMAGE_NAME .
 
       - name: Push Docker image
