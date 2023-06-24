@@ -8,7 +8,7 @@ on:
 env:
   DOCKER_HUB_USERNAME: 'hmeressa'
   DOCKER_HUB_PASSWORD: 'hiluf@2meressa'
-  IMAGE_NAME: hmeressa/myimage:1
+  IMAGE_NAME: hmeressa/myimage:2
 
 jobs:
   build-and-push:
