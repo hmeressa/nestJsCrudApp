@@ -4,16 +4,15 @@ import {DatabaseConfig} from "./Config/connectionEnv";
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {AuthModule} from "./Modules/auth.module";
 import {APP_PIPE} from "@nestjs/core";
-import {AuthMiddleware} from "./Middleware/auth.middleware";
-import * as path from "path";
+import {UserController} from "./Controller/user.controller";
 
 @Module({
 
   imports: [TypeOrmModule.forRoot(DatabaseConfig),
     UserModules,
-    AuthModule],
-  
-  controllers: [],
+    AuthModule,
+  ],
+  controllers: [UserController],
   
   providers: [
     {

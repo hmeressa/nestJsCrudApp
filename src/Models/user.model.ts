@@ -1,4 +1,11 @@
-import { BeforeInsert, BeforeUpdate, Column, Entity, PrimaryColumn, PrimaryGeneratedColumn, Unique } from "typeorm";
+import {
+  BeforeInsert,
+  BeforeUpdate,
+  Column,
+  Entity,
+  PrimaryColumn,
+  PrimaryGeneratedColumn,
+} from "typeorm";
 import * as bcrypt from "bcrypt";
 import { hashSync } from "bcrypt";
 import { v4 as uuidv4 } from 'uuid';
@@ -38,5 +45,8 @@ export class UserEntity {
 
   @Column()
   Role : string
+
+  // @ManyToOne(() => Role, (role) => role.users)
+  // role: Role;
 }
 
